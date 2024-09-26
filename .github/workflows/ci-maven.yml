@@ -38,9 +38,9 @@ jobs:
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
 
-    - name: 'PULL TEST'
+    - name: 'docker pull openjdk:17'
       run: |
-            docker pull cepgbaseacr.azurecr.io/library/nginx:1.18
+            docker pull openjdk:17-slim
          
     - name: 'Build & Tag Image'
       run: |
