@@ -40,7 +40,7 @@ jobs:
 
     - name: 'PULL TEST'
       run: |
-            docker pull cepgbaseacr.azurecr.io/docker.io/openjdk:17-slim
+            docker pull cepgbaseacr.azurecr.io/nginx:v1
          
     - name: 'Build & Tag Image'
       run: |
