@@ -38,11 +38,6 @@ jobs:
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
 
-    - name: 'PULL TEST'
-      run: |
-            docker pull cepgbaseacr.azurecr.io/docker.io/openjdk:17-slim
-        
-
     - name: 'Build & Tag Image'
       run: |
             docker build -t ${{ secrets.BASEACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ steps.gen-version.outputs.VERSION }} -f Dockerfile-maven .
