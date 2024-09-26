@@ -40,7 +40,7 @@ jobs:
 
     - name: 'PULL TEST'
       run: |
-            docker pull cepgbaseacr.azurecr.io/nginx:v1
+            docker pull cepgbaseacr.azurecr.io/library/nginx:1.18
          
     - name: 'Build & Tag Image'
       run: |
