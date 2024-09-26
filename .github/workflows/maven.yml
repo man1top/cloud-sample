@@ -37,7 +37,11 @@ jobs:
         login-server: ${{ secrets.BASEACR_LOGIN_SERVER  }}
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
-
+    
+    - name: 'docker pull openjdk'
+      run: |
+            docker pull openjdk:17-slim
+      
     - name: 'Build & Tag Image'
       run: |
             docker build -t ${{ secrets.BASEACR_LOGIN_SERVER  }}/${{ env.IMAGE_NAME }}:${{ steps.gen-version.outputs.VERSION }} -f Dockerfile-maven .
